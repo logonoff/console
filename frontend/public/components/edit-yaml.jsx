@@ -747,7 +747,6 @@ const EditYAMLInner = (props) => {
     !showSidebar && hasSidebarContent ? (
       <Button
         icon={<InfoCircleIcon className="co-icon-space-r co-p-has-sidebar__sidebar-link-icon" />}
-        type="button"
         variant="link"
         isInline
         onClick={toggleSidebar}
@@ -807,6 +806,8 @@ const EditYAMLInner = (props) => {
                 onChange={onChange}
                 onSave={() => (allowMultiple ? saveAll() : save())}
                 onEditorDidMount={() => setEditorMounted(true)}
+                isLanguageLabelVisible
+                isCopyEnabled={canDownload}
               />
               <div className="yaml-editor__buttons" ref={buttons}>
                 {customAlerts}
